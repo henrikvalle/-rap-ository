@@ -12,6 +12,7 @@ int main()
     exibe();
     NoSecreto * lstSecreta = inicializaListaSecreta();
     NoSecreto * sorteada;
+    NoSecreto * usadas = inicializaListaSecreta();
     lstSecreta = carregaListaArquivo(lstSecreta,"palavras.dat");
     imprimeListaSecreta(lstSecreta);
 
@@ -20,9 +21,10 @@ int main()
         exibe();
         imprimeListaSecreta(lstSecreta);
 
-        sorteada= sorteiaPalavra(lstSecreta);
+        sorteada= sorteiaPalavra(lstSecreta,usadas);
         if(sorteada!=NULL){
             printf("%s\n", sorteada->palavra);
+            lstSecreta = retiraUmElemento(lstSecreta,sorteada->palavra);
         }else{
             printf("Não tem palavra disponível!\n\n");
         }

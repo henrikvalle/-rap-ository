@@ -97,7 +97,7 @@ int temPalavraNaoUsada(NoSecreto *l)
     return 0;
 }
 
-NoSecreto * sorteiaPalavra(NoSecreto *l)
+NoSecreto * sorteiaPalavra(NoSecreto *l,NoSecreto *l2)
 {
     int tam = quantos(l);
     int aleatorio=0;
@@ -108,8 +108,13 @@ NoSecreto * sorteiaPalavra(NoSecreto *l)
         aleatorio = geraAleatorio(tam);
         p = retornaPalavraPos(l,aleatorio);
         if(p->status==0){
+          {
             p->status = 1;
             return p;
+            l2 = inserePalavraSecreta(p,p->palavra,p->assunto);
+
+          }
+
         }
     }
     return NULL;
@@ -136,6 +141,27 @@ int geraAleatorio(int maximo)
     return n;
 }
 
+NoSecreto * retiraUmElemento(NoSecreto * l, char palavra[31])
+{
+    NoSecreto * ant = NULL;
+    NoSecreto * p = l;
+
+    while(p != NULL && p->palavra != palavra)
+    {
+        ant = p;
+        p = p->prox;
+    }
+    if(ant == NULL)
+       {
+            l = p->prox;
+       }
+    else
+    {
+       ant->prox = p->prox;
+    }
+    free(p);
+    return l;
+}
 /*NoL * crialetras(NoSecreto * l)
 {
     NoSecreto * u = escolhealeatorio(l);
