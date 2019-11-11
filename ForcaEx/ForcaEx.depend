@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1573447540 source:c:\users\andre\f08\forcaex\forcaex.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"forcaex.h"
+
+1573450121 c:\users\andre\f08\forcaex\forcaex.h
+
+1573450576 source:c:\users\andre\f08\forcaex\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"forcaex.h"
+	<locale.h>
+
