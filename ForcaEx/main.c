@@ -44,7 +44,7 @@ do{
             do{
                 system("cls");
                 sorteada = sorteiaPalavra(lstSecreta);
-
+                tentativas = 0;
                 if(sorteada!=NULL)
                     {
                         strcpy(palavra2,sorteada->palavra);
@@ -64,7 +64,8 @@ do{
                             if(strcmp(palavra2,sorteada->palavra) == 0)
                             {
                                 system("cls");
-                                printf("\nAcertou!!! Tentativas: %d\n",tentativas);break;
+                                printf("\nAcertou!!! Tentativas: %d\n",tentativas);
+                                sair++;break;
                             }
 
                             printf("Digite uma letra:\n");
