@@ -14,3 +14,18 @@
 	"forcaex.h"
 	<locale.h>
 
+1573580411 source:c:\users\aluno\lets\forcaex\forcaex.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"forcaex.h"
+
+1573580411 c:\users\aluno\lets\forcaex\forcaex.h
+
+1573580411 source:c:\users\aluno\lets\forcaex\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"forcaex.h"
+	<locale.h>
+

@@ -17,7 +17,7 @@ int main()
     lstSecreta = carregaListaArquivo(lstSecreta,"palavras.dat");
 
     char nome[31] = "Usuario1",palavra2[31],letra;
-    int op,sair = 0,tentativas = 0;
+    int op,ab,sair = 0,tentativas = 0;
 
 do{
      system("cls");
@@ -57,8 +57,9 @@ do{
                         for(int a=0; a<strlen(sorteada->palavra)*3; a++)
                         {
                             exibe();
-                            printf("\t\tBem vindo %s!\n",nome);
-                            printf("Assunto: %s\n",sorteada->assunto);
+                            printf("\n\t\tBem vindo %s!\n\n",nome);
+
+                            printf("Assunto: %s\n\n",sorteada->assunto);
                              printf("%s\n",palavra2);
                             if(strcmp(palavra2,sorteada->palavra) == 0)
                             {
@@ -82,8 +83,9 @@ do{
                         }
                         if((tentativas = strlen(sorteada->palavra)*3) && (strcmp(palavra2,sorteada->palavra) != 0))
                         {
-                          printf("Não acertou!!! Que pena!!!");
+                          printf("Não acertou!!! Que pena!!!\n");
                           printf("Ultrapassou o número de tentativas: %d\n",tentativas);
+                          printf("Palavra = %s",sorteada->palavra);
                         }
                         usadas = insereUsadas(usadas,sorteada->palavra);
                         lstSecreta = retiraUmElemento(lstSecreta,sorteada->palavra);
@@ -96,7 +98,6 @@ do{
        }while(getchar()!='f' && sair == 0);
 
       }
-
 }while(op != 0);
 
 
